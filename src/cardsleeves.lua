@@ -2,7 +2,7 @@ if CardSleeves then
 
 CardSleeves.Sleeve {
     key = "desleeve",
-    atlas = "desleeve",  -- you will need to create an atlas yourself
+    atlas = "sleeves",
     pos = { x = 0, y = 0 },
     loc_txt = {
         name = "Decisive Sleeve",
@@ -24,8 +24,8 @@ end
 
 CardSleeves.Sleeve {
     key = "earlsleeve",
-    atlas = "dogsleeve",  -- you will need to create an atlas yourself
-    pos = { x = 0, y = 0 },
+    atlas = "sleeves",
+    pos = { x = 1, y = 0 },
     loc_txt = {
         name = "Earl Sleeve",
         text = { "start with {C:attention}20${}",

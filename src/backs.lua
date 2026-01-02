@@ -9,7 +9,7 @@ SMODS.Back {
 			"Joker"
         }
     },
-    atlas = "wyrdeck",
+    atlas = "backs",
     pos = {x = 0, y = 0},
     apply = function(self, back)
     if G and G.GAME then
@@ -31,8 +31,8 @@ SMODS.Back {
             "Stressed Joker"
         }
     },
-    atlas = "sdeck",
-    pos = {x = 0, y = 0},
+    atlas = "backs",
+    pos = {x = 1, y = 0},
     apply = function(self, back)
         if G and G.GAME then
             G.GAME.dollars = 4
@@ -58,8 +58,8 @@ SMODS.Back {
 			"Take this dollar for your struggles."
         }
     },
-    atlas = "modeck",
-    pos = {x = 0, y = 0},
+    atlas = "backs",
+    pos = {x = 2, y = 0},
     apply = function(self, back)
     if G and G.GAME then
         local jokers = {"j_fams_doller"}
@@ -88,8 +88,8 @@ SMODS.Back {
             "{C:red}OOOO MATH HOMEWORK!{}"
         }
     },
-    atlas = "paper",
-    pos = {x = 0, y = 0},
+    atlas = "backs",
+    pos = {x = 4, y = 0},
     apply = function(self, back)
     if G and G.GAME then
         local jokers = {"j_fams_ritz", "j_fams_pencil"}
@@ -118,8 +118,8 @@ SMODS.Back {
 			"and {C:attention}Earl Joe{}"
         }
     },
-    atlas = "edeck",
-    pos = {x = 0, y = 0},
+    atlas = "backs",
+    pos = {x = 3, y = 0},
     apply = function(self, back)
     if G and G.GAME then
         local jokers = {"j_fams_earl"}
