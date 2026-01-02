@@ -6,10 +6,13 @@ assert(SMODS.load_file('src/vouchers.lua'))()
 assert(SMODS.load_file('src/sounds.lua'))()
 assert(SMODS.load_file('src/vouchers.lua'))()
 assert(SMODS.load_file('src/seals.lua'))()
+assert(SMODS.load_file('src/stake.lua'))()
 assert(SMODS.load_file('src/tags.lua'))()
+assert(SMODS.load_file('src/boosters.lua'))()
 assert(SMODS.load_file('src/ranks.lua'))()
 assert(SMODS.load_file('src/bigboys.lua'))()
 assert(SMODS.load_file('src/challenge.lua'))()
+assert(SMODS.load_file('src/backs.lua'))()
 assert(SMODS.load_file('src/mainmenu.lua'))()
 assert(SMODS.load_file('src/cardsleeves.lua'))()
 
@@ -191,6 +194,16 @@ SMODS.current_mod.extra_tabs = function()
                                 {
                                     n = G.UIT.T,
                                     config = {text = "Credits", colour = G.C.UI.TEXT_LIGHT, scale = 1.2, padding = 0.1}
+                                }
+                            }
+                        },
+						{
+                            n = G.UIT.R,
+                            config = {align = "cm", minw = 12, minh = 1, padding = 0},
+                            nodes = {
+                                {
+                                    n = G.UIT.T,
+                                    config = {text = "Thanks to these wonderful fellas for their contributions to this silly ass project", colour = G.C.UI.TEXT_LIGHT, scale = 0.5}
                                 }
                             }
                         },
@@ -1370,6 +1383,20 @@ GiftBox = function()
         	set = "joker",                -- Card type: 'Joker', 'Tarot', 'Spectral', etc.
         	legendary = false,            -- Legendary rarity (true/false)
 			key = "j_stone",
+        	skip_materialize = false,     -- Skip animation
+    		}
+		end,
+		function()
+			SMODS.add_card{
+        	set = "joker",                -- Card type: 'Joker', 'Tarot', 'Spectral', etc.
+        	legendary = false,            -- Legendary rarity (true/false)
+			key = "j_bootstraps",
+        	skip_materialize = false,     -- Skip animation
+    		}
+			SMODS.add_card{
+        	set = "joker",                -- Card type: 'Joker', 'Tarot', 'Spectral', etc.
+        	legendary = false,            -- Legendary rarity (true/false)
+			key = "j_golden",
         	skip_materialize = false,     -- Skip animation
     		}
 		end
