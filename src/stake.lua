@@ -26,7 +26,7 @@ SMODS.Stake {
 			text = {'Win a run with the Time Stake active.'}
 		}
 	},
-	atlas = 'timestake',
+	atlas = 'stakes',
 	pos = { x = 0, y = 0 },
 	sticker_pos = { x = 0, y = 0 },
 	unlocked = false,
@@ -66,9 +66,9 @@ SMODS.Stake {
 			text = {'Haha'}
 		}
 	},
-	atlas = 'walmart',
-	pos = { x = 0, y = 0 },
-	sticker_pos = { x = 0, y = 0 },
+	atlas = 'stakes',
+	pos = { x = 1, y = 0 },
+	sticker_pos = { x = 1, y = 0 },
 	unlocked = false,
 	colour = {0.69, 0.61, 0.60, 1}, 
 	above_stake = 4, 
@@ -106,9 +106,9 @@ SMODS.Stake {
 			text = {'Win a run with U.S. Economy in 2022'}
 		}
 	},
-	atlas = 'poorstake',
-	pos = { x = 0, y = 0 },
-	sticker_pos = { x = 0, y = 0 },
+	atlas = 'stakes',
+	pos = { x = 2, y = 0 },
+	sticker_pos = { x = 2, y = 0 },
 	unlocked = false,
 	colour = {0.50, 0.19, 0.07, 1}, 
 	above_stake = nil, 

@@ -222,3 +222,10 @@ SMODS.Atlas {
 	px = 73,
 	py = 95
 }
+
+SMODS.Atlas {
+	key = "stakes",
+	path = "stakes.png",
+	px = 29,
+	py = 29
+}
