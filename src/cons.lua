@@ -965,7 +965,8 @@ SMODS.Consumable {
         name = "Don",
         text = {"Adds a {C:red}Don{} to {C:attention}3{} card."}
     },
-    atlas = "doncard",
+    atlas = "tarots",
+    pos = { x = 0, y = 0 },
     cost = 3,
 	use = function(self, card)
         setseal_all_selected("don_seal")
@@ -983,7 +984,8 @@ SMODS.Consumable {
         name = "Katsu",
         text = {"Adds a {C:blue}Katsu{} to {C:attention}5{} cards."}
     },
-    atlas = "katcard", -- Make sure you have a sprite named 'triangle'
+    atlas = "tarots",
+    pos = { x = 1, y = 0 },
     cost = 5,
 	use = function(self, card)
         setseal_all_selected("ka_seal")

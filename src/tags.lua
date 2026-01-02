@@ -7,7 +7,7 @@ SMODS.Tag {
             "{C:red}Kills your run{}"
         }
     },
-    atlas = "trap", -- or your custom atlas
+    atlas = "tags", -- or your custom atlas
     pos = { x = 0, y = 0 },
     config = {},
     discovered = false,
@@ -36,8 +36,8 @@ SMODS.Tag {
 			"{C:inactive}Does NOT need room.{}"
         }
     },
-    atlas = "Dball",
-    pos = { x = 0, y = 0 },
+    atlas = "tags", -- or your custom atlas
+    pos = { x = 1, y = 0 },
     config = {},
     discovered = false,
     min_ante = 1,
@@ -76,8 +76,8 @@ SMODS.Tag {
             "{C:attention}Jumps up 3 antes{}"
         }
     },
-    atlas = "up", -- or your custom atlas
-    pos = { x = 0, y = 0 },
+    atlas = "tags", -- or your custom atlas
+    pos = { x = 2, y = 0 },
     config = {},
     discovered = false,
      min_ante = 1,
@@ -104,8 +104,8 @@ SMODS.Tag {
             "{C:attention}Jumps down 3 antes{}"
         }
     },
-    atlas = "down", -- or your custom atlas
-    pos = { x = 0, y = 0 },
+    atlas = "tags", -- or your custom atlas
+    pos = { x = 3, y = 0 },
     config = {},
     discovered = false,
      min_ante = 4,
@@ -132,8 +132,8 @@ SMODS.Tag {
             "Becomes {C:attention}Any Tag{} on activate"
         }
     },
-    atlas = "shapeshifter", -- or your custom atlas
-    pos = { x = 0, y = 0 },
+    atlas = "tags", -- or your custom atlas
+    pos = { x = 4, y = 0 },
     config = {},
     discovered = false,
      min_ante = 4,
@@ -174,8 +174,8 @@ SMODS.Tag {
 			"{C:inactive}does NOT need room.{}"
         }
     },
-    atlas = "GB",
-    pos = { x = 0, y = 0 },
+    atlas = "tags", -- or your custom atlas
+    pos = { x = 5, y = 0 },
     config = {},
     discovered = false,
     min_ante = 1,
@@ -205,8 +205,8 @@ SMODS.Tag {
             "gives 10 {C:edition}negative{} playing cards."
         }
     },
-    atlas = "cheat",
-    pos = { x = 0, y = 0 },
+    atlas = "tags", -- or your custom atlas
+    pos = { x = 6, y = 0 },
     config = {},
     discovered = false,
     min_ante = 1,
