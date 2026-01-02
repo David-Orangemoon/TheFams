@@ -7,7 +7,7 @@ SMODS.Voucher {
             "Every blind starts with {C:blue}+500{} chips."
         }
     },
-    atlas = "headstart", -- Use any atlas key you have, or replace with your own
+    atlas = "vouchers", 
     pos = {x = 0, y = 0},
     cost = 5,
 	calculate = function(self, card, context)
@@ -31,8 +31,8 @@ SMODS.Voucher {
             "Every blind starts with {C:blue}+1000{} chips."
         }
     },
-    atlas = "earlybird", -- Use any atlas key you have, or replace with your own
-    pos = {x = 0, y = 0},
+    atlas = "vouchers", 
+    pos = {x = 1, y = 0},
     cost = 5,
 	requires = {"v_fams_headstartv"},
 	calculate = function(self, card, context)
@@ -57,8 +57,8 @@ SMODS.Voucher {
 			"{C:inactive}Works once every round{}"
         }
     },
-    atlas = "rev", -- Use any atlas key you have, or replace with your own
-    pos = {x = 0, y = 0},
+    atlas = "vouchers", 
+    pos = {x = 2, y = 0},
     cost = 50,
 	calculate = function(self, card, context)
 		if context.setting_blind and G and G.GAME and G.GAME.chips then
@@ -86,8 +86,8 @@ SMODS.Voucher {
 			"{C:inactive}Works once every round{}"
         }
     },
-    atlas = "dr", -- Use any atlas key you have, or replace with your own
-    pos = {x = 0, y = 0},
+    atlas = "vouchers", 
+    pos = {x = 3, y = 0},
     cost = 200,
 	requires = {"v_fams_rev"},
 	calculate = function(self, card, context)
@@ -115,8 +115,8 @@ SMODS.Voucher {
             "Increases time signature maximum to 8"
         }
     },
-    atlas = "fl", -- Use any atlas key you have, or replace with your own
-    pos = {x = 0, y = 0},
+    atlas = "vouchers", 
+    pos = {x = 4, y = 0},
     cost = 10,
 	redeem = function(self, card)
 		G.GAME.bpmmax = 8
@@ -132,8 +132,8 @@ SMODS.Voucher {
             "Increases time signature maximum to 16"
         }
     },
-    atlas = "piano", -- Use any atlas key you have, or replace with your own
-    pos = {x = 0, y = 0},
+    atlas = "vouchers", 
+    pos = {x = 5, y = 0},
     cost = 20,
 	redeem = function(self, card)
 		G.GAME.bpmmax = 16

@@ -249,13 +249,6 @@ SMODS.Atlas {
 }
 
 SMODS.Atlas {
-	key = "pikoc",
-	path = "pikoc.png",
-	px = 71,
-	py = 95
-}
-
-SMODS.Atlas {
 	key = "mega",
 	path = "mega.png",
 	px = 71,
@@ -552,27 +545,6 @@ SMODS.Atlas {
 }
 
 SMODS.Atlas {
-	key = "leaf",
-	path = "leaf.png",
-	px = 71,
-	py = 95
-}
-
-SMODS.Atlas {
-	key = "credA",
-	path = "credA.png",
-	px = 71,
-	py = 95
-}
-
-SMODS.Atlas {
-	key = "alexc",
-	path = "alexc.png",
-	px = 71,
-	py = 95
-}
-
-SMODS.Atlas {
 	key = "M-Joker",
 	path = "M-Joker.png",
 	px = 71,
@@ -774,7 +746,6 @@ SMODS.Atlas {
 
 
 
-atlas("credj", "credj.png", 276, 298)
 atlas("yogi", "yogi.png", 71, 95)
 atlas("bear", "bear.png", 71, 95)
 atlas("butterdog", "butterdog.png", 71, 95)
@@ -798,12 +769,70 @@ atlas("Searl", "Searl.png", 71, 95)
 atlas("pencil", "pencil.png", 71, 95)
 atlas("g-tax", "g-tax.png", 71, 95)
 
-atlas("dice-1", "dice-1.png", 71, 95)
-atlas("dice-2", "dice-2.png", 71, 95)
-atlas("dice-3", "dice-3.png", 71, 95)
-atlas("dice-4", "dice-4.png", 71, 95)
-atlas("dice-5", "dice-5.png", 71, 95)
-atlas("dice-6", "dice-6.png", 71, 95)
+SMODS.Atlas {
+	key = "dice",
+	path = "dice.png",
+    px = 71, 
+    py = 95
+}
+
+SMODS.Atlas {
+	key = "creditCards",
+	path = "creditCards.png",
+	px = 71,
+	py = 95
+}
+
+SMODS.Atlas {
+	key = "bossBlinds",
+	path = "bossBlinds.png",
+
+	atlas_table = "ANIMATION_ATLAS",
+
+	px = 34,
+	py = 34,
+
+	frames = 21
+}
+
+SMODS.Atlas {
+	key = "vouchers",
+	path = "vouchers.png",
+	px = 71,
+	py = 95
+}
+
+SMODS.Atlas {
+	key = "dogArt",
+	path = "dogArt.png",
+	px = 71,
+	py = 95
+}
+
+SMODS.Atlas {
+	key = "stickers",
+	path = "stickers.png",
+	px = 71,
+	py = 95
+}
+
+SMODS.Atlas {
+	key = "seals",
+	path = "seals.png",
+	px = 71,
+	py = 95
+}
+
+SMODS.Atlas {
+	key = "tarots",
+	path = "tarots.png",
+	px = 71,
+	py = 95
+}
+
+
+
+
 atlas("m-coup", "m-coup.png", 71, 95)
 atlas("m-si", "m-si.png", 71, 95)
 atlas("m-m", "m-m.png", 71, 95)

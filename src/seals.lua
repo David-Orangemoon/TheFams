@@ -8,8 +8,8 @@ SMODS.Seal {
             "{C:edition,E:1}This card is cool B){}."
         }
     },
-    atlas = "cool",           -- Use your atlas key or default
-    pos = { x = 0, y = 0 },    -- Position in the atlas
+    atlas = "seals",
+    pos = { x = 0, y = 0 },
     badge_colour = HEX('fffb00'),
     config = {cool = true},               -- Any custom config values
     calculate = function(self, card, context)
@@ -25,8 +25,8 @@ SMODS.Seal {
 	"if on the last card of a pattern of 5 of {C:mult}Don's{} and or {C:chips}ka's{}",
 	"gives {X:mult,C:white}5x{} mult instead"}
     },
-    atlas = "don",
-    pos = { x = 0, y = 0 },
+    atlas = "seals",
+    pos = { x = 1, y = 0 },
     badge_colour = HEX('F04827'),
     config = {},
     calculate = function(self, card, context)
@@ -56,8 +56,8 @@ SMODS.Seal {
 	"gives {X:chips,C:white}5x{} chips instead"
         }
     },
-    atlas = "katsu",           -- Use your atlas key or default
-    pos = { x = 0, y = 0 },    -- Position in the atlas
+    atlas = "seals",
+    pos = { x = 2, y = 0 },
     badge_colour = HEX('5dc0bc'),
     config = {},               -- Any custom config values
     calculate = function(self, card, context)
@@ -84,8 +84,8 @@ SMODS.Seal {
         label = "Geometry",
         text = {"{X:mult,C:white}+1{} mult."}
     },
-    atlas = "dot",
-    pos = { x = 0, y = 0 },
+    atlas = "seals",
+    pos = { x = 3, y = 0 },
     badge_colour = HEX('00FF33'),
     config = {},
     calculate = function(self, card, context)
@@ -103,8 +103,8 @@ SMODS.Seal {
         label = "Geometry",
         text = {"{X:mult,C:white}X2{} mult."}
     },
-    atlas = "bi",
-    pos = { x = 0, y = 0 },
+    atlas = "seals",
+    pos = { x = 4, y = 0 },
     badge_colour = HEX('00FF33'),
     config = {},
     calculate = function(self, card, context)
@@ -115,11 +115,6 @@ SMODS.Seal {
 }
 
 
-
-
-
-
-
 SMODS.Seal {
     key = "tri",
     loc_txt = {
@@ -127,8 +122,8 @@ SMODS.Seal {
         label = "Geometry",
         text = {"{X:mult,C:white}X3{} mult."}
     },
-    atlas = "tri",
-    pos = { x = 0, y = 0 },
+    atlas = "seals",
+    pos = { x = 5, y = 0 },
     badge_colour = HEX('00FF33'),
     config = {},
     calculate = function(self, card, context)
@@ -139,11 +134,6 @@ SMODS.Seal {
 }
 
 
-
-
- 
-
-
 SMODS.Seal {
     key = "quad",
     loc_txt = {
@@ -151,8 +141,8 @@ SMODS.Seal {
         label = "Geometry",
         text = {"{X:mult,C:white}X4{} mult."}
     },
-    atlas = "quad",
-    pos = { x = 0, y = 0 },
+    atlas = "seals",
+    pos = { x = 6, y = 0 },
     badge_colour = HEX('00FF33'),
     config = {},
     calculate = function(self, card, context)
@@ -164,11 +154,6 @@ SMODS.Seal {
 }
 
 
-
-
- 
-
-
 SMODS.Seal {
     key = "pent",
     loc_txt = {
@@ -176,8 +161,8 @@ SMODS.Seal {
         label = "Geometry",
         text = {"{X:mult,C:white}X5{} mult."}
     },
-    atlas = "pentcard",
-    pos = { x = 0, y = 0 },
+    atlas = "seals",
+    pos = { x = 7, y = 0 },
     badge_colour = HEX('00FF33'),
     config = {},
     calculate = function(self, card, context)
@@ -189,11 +174,6 @@ SMODS.Seal {
 }
 
 
-
-
- 
-
-
 SMODS.Seal {
     key = "hex",
     loc_txt = {
@@ -201,8 +181,8 @@ SMODS.Seal {
         label = "Geometry",
         text = {"{X:mult,C:white}X6{} mult."}
     },
-    atlas = "hex",
-    pos = { x = 0, y = 0 },
+    atlas = "seals",
+    pos = { x = 8, y = 0 },
     badge_colour = HEX('00FF33'),
     config = {},
     calculate = function(self, card, context)

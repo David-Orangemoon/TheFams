@@ -6,7 +6,7 @@ SMODS.Sticker{
 				"On {C:attention}hand played{}"},
         label = "ON SALE!"
     },
-    atlas = "onsale",
+    atlas = "stickers",
     pos = {x = 0, y = 0},
     badge_colour = {1, 0.5, 0, 1},
     hide_badge = false,
@@ -42,8 +42,8 @@ SMODS.Sticker{
 				"{C:inactive}Gain half the sell value{}"},
         label = "BLACK FRIDAY SALE!"
     },
-    atlas = "EXsale",
-    pos = {x = 0, y = 0},
+    atlas = "stickers",
+    pos = {x = 1, y = 0},
     badge_colour = {1, 0.5, 0, 1},
     hide_badge = false,
     default_compat = true,

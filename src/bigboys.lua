@@ -5,7 +5,8 @@ local picky_hand_types = {
 
 SMODS.Blind {
     key = "the_picky",
-	atlas = "picky",
+	atlas = "bossBlinds",
+    pos = { x = 0, y = 0 },
     loc_txt = {
         name = "The Picky",
         text = {"play a specified hand type"}
@@ -30,7 +31,8 @@ local picky_suits = {"Hearts", "Diamonds", "Clubs", "Spades"}
 
 SMODS.Blind {
     key = "the_greedy",
-	atlas = "greed",
+	atlas = "bossBlinds",
+    pos = { x = 0, y = 1 },
     loc_txt = {
         name = "The Greedy",
         text = {"play a specified suit"}
@@ -59,7 +61,8 @@ end,
 
 SMODS.Blind {
     key = "the_forceful",
-    atlas = "forceful",
+	atlas = "bossBlinds",
+    pos = { x = 0, y = 2 },
     loc_txt = {
         name = "The Forceful",
         text = {"All cards are debuffed."}
@@ -78,7 +81,8 @@ SMODS.Blind {
 
 SMODS.Blind {
     key = "gh",
-	atlas = "guesswho",
+	atlas = "bossBlinds",
+    pos = { x = 0, y = 3 },
     loc_txt = {
         name = "Guess Who",
         text = {"all cards and jokers are flipped"}
@@ -95,7 +99,8 @@ SMODS.Blind {
 
 SMODS.Blind {
     key = "fish2",
-	atlas = "salmon",
+	atlas = "bossBlinds",
+    pos = { x = 0, y = 4 },
     loc_txt = {
         name = "The Salmon",
         text = {"all enchanced and sealed cards are debuffed"}
@@ -119,7 +124,8 @@ local selcardrank = {"fams_one", "2", "3", "4", "5", "6", "7", "8", "9", "10", "
 
 SMODS.Blind {
     key = "extinct",
-	atlas = "skullblind",
+	atlas = "bossBlinds",
+    pos = { x = 0, y = 5 },
     loc_txt = {
         name = "Extinction",
         text = {"At the end of first hand",
@@ -145,7 +151,8 @@ SMODS.Blind {
 
 SMODS.Blind {
     key = "needle2",
-	atlas = "pin",
+	atlas = "bossBlinds",
+    pos = { x = 0, y = 6 },
     loc_txt = {
         name = "The Pin(head)",
         text = {"Play Only One Hand, 3 Discards"}
@@ -168,7 +175,8 @@ SMODS.Blind {
 
 SMODS.Blind {
     key = "bad",
-	atlas = "fuck",
+	atlas = "bossBlinds",
+    pos = { x = 0, y = 7 },
     loc_txt = {
         name = "The Fuck You Blind",
         text = {"What a shame for your final boss blind."}
@@ -191,7 +199,8 @@ SMODS.Blind {
 
 SMODS.Blind {
     key = "Pootis",
-	atlas = "pootis",
+	atlas = "bossBlinds",
+    pos = { x = 0, y = 8 },
     loc_txt = {
         name = "The Pootis",
         text = {"Chips are pushed back each played hand."}
@@ -223,7 +232,8 @@ SMODS.Blind {
 
 SMODS.Blind {
     key = "EarlBoss",
-    atlas = "EarlBoss",
+	atlas = "bossBlinds",
+    pos = { x = 0, y = 9 },
     loc_txt = {
         name = "The Big Dawg",
         text = {"1 in 4 to eat a joker every hand."}

@@ -8,7 +8,7 @@ SMODS.Consumable{
             '{C:inactive}"This {C:chips}Lua{} {C:inactive}file is pissing me off"{}'
         },
     },
-    atlas = "leaf",
+    atlas = "creditCards",
     pos = {x = 0, y = 0},
     cost = 3,
     unlocked = true,
@@ -27,8 +27,8 @@ SMODS.Consumable{
 			"{C:inactive}S l e e p y  f e l l a{}"
         }
     },
-    atlas = "alexc",
-    pos = {x = 0, y = 0},
+    atlas = "creditCards",
+    pos = {x = 1, y = 0},
     cost = 3,
     unlocked = true,
     discovered = true,
@@ -46,8 +46,8 @@ SMODS.Consumable{
             '{C:inactive}"i wonder how many bananas i can fit inside my ass"{}'
         }
     },
-    atlas = "credj",
-    pos = {x = 0, y = 0},
+    atlas = "creditCards",
+    pos = {x = 2, y = 0},
     cost = 3,
     unlocked = true,
     discovered = true,
@@ -66,8 +66,8 @@ SMODS.Consumable{
             '{C:inactive}"don\'t touch my man titties"{}'
         }
     },
-    atlas = "pikoc",
-    pos = {x = 0, y = 0},
+    atlas = "creditCards",
+    pos = {x = 3, y = 0},
     cost = 3,
     unlocked = true,
     discovered = true,
@@ -83,8 +83,8 @@ SMODS.Consumable{
 			'{C:inactive}"Waffle is love, Waffle is life."{}'
         },
     },
-    atlas = "credA",
-    pos = {x = 0, y = 0},
+    atlas = "creditCards",
+    pos = {x = 4, y = 0},
     cost = 3,
     unlocked = true,
     discovered = true,
@@ -411,6 +411,49 @@ end,
         return false
     end
 }
+
+SMODS.Consumable({
+	key = "m-dice",
+	set = "mini-joker",
+	loc_txt = {
+		name = "Dice",
+		text = { "Rolls the dice", "{C:red}#1#X to 6X{} Mult based on roll." },
+	},
+	atlas = "dice",
+	cost = 4,
+	pools = {
+		["mini-joker"] = true,
+	},
+	loc_vars = function()
+		return { vars = { currentprobability() } }
+	end,
+	use = function(self, card) end,
+	calculate = function(self, card, context)
+		if context.joker_main then
+			card.roll = math.random(currentprobability(), 6)
+			card:juice_up()
+			if card.roll > 6 then
+				card.roll = 6
+			end
+
+			if (card.roll) then card.children.center.sprite_pos = { x = card.roll - 1, y = 0 }; end
+			card:set_sprites()
+
+			return { xmult = card.roll }
+		end
+	end,
+
+	can_use = function(self, card)
+		return false
+	end,
+
+	update = function(self, card, dt)
+		if (card.center) then
+			print(card.center);
+			kill();
+		end
+	end,
+})
 
 SMODS.Consumable {
     key = "m-coupon",
@@ -785,12 +828,13 @@ end,
 
 SMODS.Consumable {
     key = "fatboi",
-    set = "dawgcards", -- or another set if you prefer
+    set = "dawgcards",
     loc_txt = {
         name = "FAT BOI",
         text = {"Spawns {C:attention}Earl Joe{}"}
     },
-    atlas = "fatboi", -- Make sure you have a sprite named 'triangle'
+    atlas = "dogArt",
+    pos = { x = 0, y = 0 },
     cost = 8,
 	use = function(self, card)
         SMODS.add_card{
@@ -807,12 +851,13 @@ end
 
 SMODS.Consumable {
     key = "yogee",
-    set = "dawgcards", -- or another set if you prefer
+    set = "dawgcards",
     loc_txt = {
         name = "YOGEE",
         text = {"Spawns {C:attention}Yogi{}"}
     },
-    atlas = "yogee", -- Make sure you have a sprite named 'triangle'
+    atlas = "dogArt",
+    pos = { x = 1, y = 0 },
     cost = 8,
 	use = function(self, card)
         SMODS.add_card{
@@ -829,12 +874,13 @@ end
 
 SMODS.Consumable {
     key = "baer",
-    set = "dawgcards", -- or another set if you prefer
+    set = "dawgcards",
     loc_txt = {
         name = "BAER",
         text = {"Spawns {C:attention}Bear{}"}
     },
-    atlas = "baer", -- Make sure you have a sprite named 'triangle'
+    atlas = "dogArt",
+    pos = { x = 2, y = 0 },
     cost = 8,
 	use = function(self, card)
         SMODS.add_card{
@@ -851,12 +897,13 @@ end
 
 SMODS.Consumable {
     key = "toebee",
-    set = "dawgcards", -- or another set if you prefer
+    set = "dawgcards",
     loc_txt = {
         name = "TOEBEE",
         text = {"Spawns {C:attention}Toby Radiation Fox{}"}
     },
-    atlas = "toebee", -- Make sure you have a sprite named 'triangle'
+    atlas = "dogArt",
+    pos = { x = 3, y = 0 },
     cost = 8,
 	use = function(self, card)
         SMODS.add_card{
@@ -873,12 +920,13 @@ end
 
 SMODS.Consumable {
     key = "buttergod",
-    set = "dawgcards", -- or another set if you prefer
+    set = "dawgcards",
     loc_txt = {
         name = "BETTER GOD",
         text = {"Spawns {C:attention}Butter Dog{}"}
     },
-    atlas = "buttergod", -- Make sure you have a sprite named 'triangle'
+    atlas = "dogArt",
+    pos = { x = 4, y = 0 },
     cost = 8,
 	use = function(self, card)
         SMODS.add_card{
@@ -895,12 +943,12 @@ end
 
 SMODS.Consumable {
     key = "doncard",
-    set = "Tarot", -- or another set if you prefer
+    set = "Tarot",
     loc_txt = {
         name = "Don",
         text = {"Adds a {C:red}Don{} to {C:attention}3{} card."}
     },
-    atlas = "doncard", -- Make sure you have a sprite named 'triangle'
+    atlas = "doncard",
     cost = 3,
 	use = function(self, card)
         setseal_all_selected("don_seal")
