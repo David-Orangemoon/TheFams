@@ -320,6 +320,16 @@ SMODS.Sound {
 	local previous_timer_length = TIMER_LENGTH or DEFAULT_TIMER_LENGTH
 	TIMER_LENGTH = DEFAULT_TIMER_LENGTH
 	USE_TIMERS = DEFAULT_USE_TIMERS
+
+	--Fix for talisman blowing up
+	if (G.GAME) then
+		G.GAME.pikmin_rate = 0;
+		G.GAME.credits_rate = 0;
+		G.GAME.gimmicks_rate = 0;
+		G.GAME["mini-joker_rate"] = 0.9;
+		G.GAME["dawgcards_rate"] = 0.08;
+		G.GAME["geometry_rate"] = 0.05;
+	end
 	
 	if isChallenge("Dogtrials") then
 		SetWinningAnte(12)
