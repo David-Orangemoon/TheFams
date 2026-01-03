@@ -227,3 +227,73 @@ SMODS.Tag {
 		tag.triggered = true
 	end
 }
+
+SMODS.Tag {
+    key = "SS",
+    loc_txt = {
+        name = "Shining Star",
+        text = {
+            "Recieve one {C:red,E:1}dawg{}."
+        }
+    },
+    atlas = "tags", -- or your custom atlas
+    pos = { x = 7, y = 0 },
+    config = {},
+    discovered = false,
+    min_ante = 1,
+
+    set_ability = function(self, tag)
+        
+    end,
+
+    in_pool = function(self, args)
+        return true
+    end,
+
+    apply = function(self, tag, context)
+        tag:yep("+", fams, function()
+			SMODS.add_card{
+                area = G.jokers,
+                set = "dawgcards",
+				no_edition = true
+			}
+            return true
+        end)
+		tag.triggered = true
+	end
+}
+
+SMODS.Tag {
+    key = "SS",
+    loc_txt = {
+        name = "Shining Star",
+        text = {
+            "Recieve one {C:red,E:1}dawg{}."
+        }
+    },
+    atlas = "tags", -- or your custom atlas
+    pos = { x = 7, y = 0 },
+    config = {},
+    discovered = false,
+    min_ante = 1,
+
+    set_ability = function(self, tag)
+        
+    end,
+
+    in_pool = function(self, args)
+        return true
+    end,
+
+    apply = function(self, tag, context)
+        tag:yep("+", fams, function()
+			SMODS.add_card{
+                area = G.jokers,
+                set = "dawgcards",
+				no_edition = true
+			}
+            return true
+        end)
+		tag.triggered = true
+	end
+}

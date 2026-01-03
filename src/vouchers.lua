@@ -139,3 +139,36 @@ SMODS.Voucher {
 		G.GAME.bpmmax = 16
 	end
 }
+
+SMODS.Voucher {
+    key = "moment",
+    loc_txt = {
+        name = "Do you have a moment to talk about our lord and savior jesus christ?",
+        text = {
+            "-1 ectoplasm hand removal"
+        }
+    },
+    atlas = "vouchers", 
+    pos = {x = 7, y = 0},
+    cost = 10,
+	redeem = function(self, card)
+		G.GAME.ecto_minus = G.GAME.ecto_minus - 1
+	end
+}
+
+SMODS.Voucher {
+    key = "jimbusters",
+	requires = {"v_fams_moment"},
+    loc_txt = {
+        name = "Who you gonna call? JIMBUSTERS!",
+        text = {
+            "-1 ectoplasm hand removal"
+        }
+    },
+    atlas = "vouchers", 
+    pos = {x = 8, y = 0},
+    cost = 10,
+	redeem = function(self, card)
+		G.GAME.ecto_minus = G.GAME.ecto_minus - 1
+	end
+}

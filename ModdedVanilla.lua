@@ -16,6 +16,7 @@ assert(SMODS.load_file('src/backs.lua'))()
 assert(SMODS.load_file('src/mainmenu.lua'))()
 assert(SMODS.load_file('src/cardsleeves.lua'))()
 assert(SMODS.load_file('src/timers.lua'))()
+assert(SMODS.load_file('src/pokerhands.lua'))()
 -- assert(SMODS.load_file('src/achievements.lua'))()
 
 
@@ -1267,7 +1268,7 @@ add_joker_by_key = function(joker_key, bool)
         func = function()
 				SMODS.add_card{
                 area = G.jokers,
-                key = joker_key,
+                set = joker_key,
 				no_edition = bool
 				}
             return true

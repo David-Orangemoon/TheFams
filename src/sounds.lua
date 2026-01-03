@@ -312,6 +312,7 @@ SMODS.Sound {
   path = "music_wind.ogg",
   select_music_track = function(self)
 	clearCustomTextAfterDraw()
+	forceback = false
 	
 	-- Reset to default timer settings first
 	local DEFAULT_TIMER_LENGTH = 60
@@ -490,7 +491,7 @@ SMODS.Sound {
 	volume = 0,
 	path = "music_wind.ogg",
 	select_music_track = function(self)
-
+		
 		if isChallenge("smol") then
 			SetWinningAnte(4)
 		end
@@ -507,6 +508,10 @@ SMODS.Sound {
 
 		if isChallenge("ghost") then
 			setrunBG({0.25, 0.25, 0.25, 1}, {0.45, 0.45, 0.45, 0.45}, 1)
+		end
+
+		if isChallenge("workshop") then
+			setrunBG({0, 0, 1, 1}, {0, 0, 1, 1}, 1)
 		end
 
 		if isChallenge("SPAWN") and G.STATE ~= 10 then
@@ -613,6 +618,7 @@ SMODS.Sound {
 	if isChallenge("dlcend") and getAnte() >= 25 and getAnte() < 30 then
 	musicPower(math.random(1, 8))
 	setBPM(math.random(90, 200))
+	G.GAME.dollars = math.random(-10, 10)
 	thetimer = thetimer + 1 or 0
 	setrunBG({colrandom, colrandom2, colrandom3, 1}, {0, 0, 0, 0}, superease)
 	if thetimer >= math.random(35, 75) then
@@ -620,7 +626,6 @@ SMODS.Sound {
 		colrandom2 = math.random(0, 0.1)
 		colrandom3 = math.random(0, 0.1)
 		thetimer = 0
-		superease = math.random(1, 4)
 	end
 	return 99440024
 	end

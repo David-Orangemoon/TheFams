@@ -1041,6 +1041,98 @@ SMODS.Challenge {
 }
 
 SMODS.Challenge {
+  key = 'gamb',
+  loc_txt = {
+	name = "0.000001% of gamblers quit before they hit big",
+  },
+  jokers = {
+	
+  },
+  deck = {
+	type = 'Challenge Deck'
+  },
+  rules = {
+	custom = {
+		{id = "evil"}
+	},
+	modifiers = {
+		{id = "joker_slots", value = 0},
+		{id = "hands", value = 1},
+		{id = "discards", value = 1}
+	}
+  },
+  restrictions = {
+	banned_cards = {},
+	banned_tags = {},
+	banned_other = {}
+  },
+  consumeables = {{ id = "c_fams_m-dice"}, { id = "c_fams_m-dice"}},
+  vouchers = {}
+}
+
+SMODS.Challenge {
+  key = 'workshop',
+  loc_txt = {
+	name = "Workshop",
+  },
+  jokers = {
+	{id = "j_blueprint", eternal = true, pinned = true}
+  },
+  deck = {
+	type = 'Challenge Deck'
+  },
+  rules = {
+	custom = {
+		{id = "all_eternal"},
+
+	},
+	modifiers = {
+		{id = "joker_slots", value = 2},
+		{id = "dollars", value = 50},
+	}
+  },
+  restrictions = {
+	banned_cards = {{id = "c_ectoplasm"}, {id = "v_antimatter"}},
+	banned_tags = {{id = "tag_negative"}, {id = "tag_fams_GB"}, {id = "tag_fams_cts"}, {id = "tag_buffoon"}, {id = "tag_uncommon"}, {id = "tag_rare"}, {id = "tag_negative"}, {id = "tag_holo"}, {id = "tag_polychrome"}},
+	banned_other = {}
+  },
+  button_colour = G.C.BLUE,
+  consumeables = {},
+  vouchers = {}
+}
+
+SMODS.Challenge {
+  key = 'fuel',
+  loc_txt = {
+	name = "Fueling the engine",
+  },
+  jokers = {
+	{id = "j_burnt"},
+	{id = "j_yorick"}
+  },
+  deck = {
+	type = 'Challenge Deck'
+  },
+  rules = {
+	custom = {
+
+	},
+	modifiers = {
+		{id = "joker_slots", value = 5},
+		{id = "dollars", value = 50},
+	}
+  },
+  restrictions = {
+	banned_cards = {},
+	banned_tags = {},
+	banned_other = {}
+  },
+  button_colour = G.C.BLUE,
+  consumeables = {},
+  vouchers = {}
+}
+
+SMODS.Challenge {
   key = 'dlcend',
   loc_txt = {
 	name = "To the edge of the universe",
