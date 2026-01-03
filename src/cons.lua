@@ -424,7 +424,7 @@ SMODS.Consumable({
 	set = "mini-joker",
 	loc_txt = {
 		name = "Dice",
-		text = { "Rolls the dice", "{C:red}#1#X to 6X{} Mult based on roll." },
+		text = { "Rolls the dice", "{X:mult,C:white}1X{} to {X:mult,C:white}6X{} Mult based on roll." },
 	},
     atlas = "dice", 
     pos = { x = 0, y = 0 },
@@ -464,6 +464,68 @@ SMODS.Consumable({
             if (card.rollAnim <= 0) then
                 card.rolling = false;
                 card.children.center.sprite_pos = { x = card.roll - 1, y = 0 };
+                card:set_sprites();
+            end
+        end
+
+		if (card.center) then
+			kill();
+		end
+	end,
+})
+
+SMODS.Consumable({
+	key = "m-dice-evil",
+	set = "mini-joker",
+	loc_txt = {
+		name = "{C:edition, E:1}Evil Dice{}",
+		text = { "Rolls the {X:edition, C:white}evil{} {X:edition, C:white}dice{}", "{X:mult,C:white}^1{} to {X:mult,C:white}^6{} Mult based on roll." },
+	},
+    atlas = "dice", 
+    pos = { x = 0, y = 2 },
+	cost = 4,
+	pools = {
+		["mini-joker"] = true,
+	},
+	loc_vars = function()
+		return { vars = { currentprobability() } }
+	end,
+	use = function(self, card) end,
+	calculate = function(self, card, context)
+        if context.before then
+			card.rollAnim = 30;
+            card.rolling = true;
+            return;
+		end
+
+		if context.joker_main then
+			card.roll = math.random(currentprobability(), 6);
+			card:juice_up()
+
+            local expoMult = 1;
+            for i = 0, card.roll - 1, 1 do 
+                expoMult = expoMult * G.GAME.current_round.current_hand.mult;
+            end
+
+            print(context.scoring_hand);
+
+			return { xmult = expoMult }
+        end
+	end,
+
+	can_use = function(self, card)
+		return false
+	end,
+
+	update = function(self, card, dt)
+        if (card.rolling) then
+            card.children.center.sprite_pos = { x = math.floor(card.rollAnim % 6), y = 3 };
+			card.rollAnim = card.rollAnim - dt * 12 * math.max(2, G.SPEEDFACTOR);
+			card:set_sprites();
+
+            if (card.rollAnim <= 0) then
+                card.rolling = false;
+                card.children.center.sprite_pos = { x = card.roll - 1, y = 2 };
                 card:set_sprites();
             end
         end

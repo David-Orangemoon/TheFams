@@ -2,6 +2,20 @@
 version = "1.0.0"
 priority = 0
 
+#A less strange update
+[[patches]]
+[patches.pattern]
+target = "main.lua"
+pattern = "G:update(dt)"
+position = "after"
+payload = '''
+if (G.fams_update) then
+    G.fams_update(dt);
+end
+'''
+match_indent = true
+times = 1
+
 #Fix for Talisman
 [[patches]]
 [patches.pattern]
