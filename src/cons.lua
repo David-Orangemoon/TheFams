@@ -479,7 +479,7 @@ SMODS.Consumable({
 	set = "mini-joker",
 	loc_txt = {
 		name = "{C:edition, E:1}Evil Dice{}",
-		text = { "Rolls the {X:edition, C:white}evil{} {X:edition, C:white}dice{}", "{X:mult,C:white}^1{} to {X:mult,C:white}^6{} Mult based on roll." },
+		text = { "Rolls the {X:edition, C:white}evil{} {X:edition, C:white}dice{}", "{X:mult,C:white}^1{} to {X:mult,C:white}^6{} of the", "hand's mult based on roll." },
 	},
     atlas = "dice", 
     pos = { x = 0, y = 2 },
@@ -506,8 +506,6 @@ SMODS.Consumable({
             for i = 0, card.roll - 1, 1 do 
                 expoMult = expoMult * G.GAME.current_round.current_hand.mult;
             end
-
-            print(context.scoring_hand);
 
 			return { xmult = expoMult }
         end

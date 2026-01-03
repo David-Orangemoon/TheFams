@@ -1,4 +1,7 @@
 G.fams_update = function(dt)
+    --Stop us from appearing in the intro
+    if (G.STATE == 13) then return end;
+
 	clearCustomTextAfterDraw()
 	forceback = false
 
