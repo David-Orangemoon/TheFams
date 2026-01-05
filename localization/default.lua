@@ -97,6 +97,9 @@ return {
             ch_c_finaledlc = {
                 "{C:edition,E:2}Winning Ante up to 38{}",
             },
+            ch_c_epi = {
+                "{C:red,E:2,S:1.3}Epilepsy Warning for this challenge{}",
+            },
             ch_c_evil = {
                 "{E:1,S:1.5}Evil >=]{}",
             },

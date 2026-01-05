@@ -12,6 +12,7 @@ assert(SMODS.load_file('src/boosters.lua'))()
 assert(SMODS.load_file('src/ranks.lua'))()
 assert(SMODS.load_file('src/bigboys.lua'))()
 assert(SMODS.load_file('src/challenge.lua'))()
+assert(SMODS.load_file('src/challengemenu.lua'))()
 assert(SMODS.load_file('src/backs.lua'))()
 assert(SMODS.load_file('src/mainmenu.lua'))()
 assert(SMODS.load_file('src/cardsleeves.lua'))()
@@ -19,6 +20,7 @@ assert(SMODS.load_file('src/timers.lua'))()
 assert(SMODS.load_file('src/pokerhands.lua'))()
 assert(SMODS.load_file('src/update.lua'))()
 -- assert(SMODS.load_file('src/achievements.lua'))()
+
 
 
 title_variant = title_variant or 1

@@ -22,6 +22,40 @@ G.fams_update = function(dt)
 		G.GAME["geometry_rate"] = 0.05
 	end
 
+	-- dlcend stuff
+	if isChallenge("dlcend") then 
+		SetWinningAnte(38)
+	end
+
+	if isChallenge("dlcend") and getAnte() >= 40 and getAnte() < 50 then
+  	setrunBG({ 0.545, 0.51, 0.78, 1 }, { 0.357, 0.325, 0.549, 1 }, 1)
+	musicPower(4)
+	setBPM(120)
+	end
+
+	if isChallenge("dlcend") and getAnte() >= 50 and getAnte() < 70 then
+    setrunBG({ 0.529, 0.725, 0.922, 1 }, { 0.698, 0.792, 0.89, 1 }, 1)
+	musicPower(5)
+	setBPM(130)
+	return 9999
+	end
+
+	if isChallenge("dlcend") and getAnte() >= 70 and getAnte() < 80 then
+	musicPower(math.random(1, 8))
+	setBPM(math.random(90, 200))
+	G.GAME.dollars = math.random(-10, 10)
+	spinnerbone = math.random(-10, 10)
+	thetimer = thetimer + 1 or 0
+	setrunBG({colrandom, colrandom2, colrandom3, 1}, {0, 0, 0, 0}, spinnerbone)
+	if thetimer >= math.random(35, 75) then
+		colrandom = math.random(0, 0.01)
+		colrandom2 = math.random(0, 0.01)
+		colrandom3 = math.random(0, 0.01)
+		thetimer = 0
+	end
+	return 99440024
+	end
+
 	if isChallenge("Dogtrials") then
 		SetWinningAnte(12)
 		TIMER_LENGTH = 600
@@ -315,4 +349,5 @@ G.fams_update = function(dt)
 	else
 	end
 	last_checked_ante = ante
+
 end

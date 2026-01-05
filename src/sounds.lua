@@ -1,4 +1,4 @@
-
+spinnerbone = math.random(-10, 10) 
 SMODS.Sound {
   key = "music_gen",
   pitch = 1,
@@ -331,33 +331,8 @@ SMODS.Sound {
   path = "music_stopit.ogg",
   select_music_track = function(self)
 	if isChallenge("dlcend") and getAnte() >= 70 and getAnte() < 80 then
-	musicPower(math.random(1, 8))
-	setBPM(math.random(90, 200))
-	G.GAME.dollars = math.random(-10, 10)
-	thetimer = thetimer + 1 or 0
-	setrunBG({colrandom, colrandom2, colrandom3, 1}, {0, 0, 0, 0}, superease)
-	if thetimer >= math.random(35, 75) then
-		colrandom = math.random(0, 0.5)
-		colrandom2 = math.random(0, 0.5)
-		colrandom3 = math.random(0, 0.5)
-		thetimer = 0
-	end
+	
 	return 99440024
-	end
-  end
-}
-
-SMODS.Sound {
-  key = "music_outer",
-  pitch = 1,
-  volume = 1,
-  path = "music_outer.ogg",
-  select_music_track = function(self)
-	if isChallenge("dlcend") and getAnte() >= 20 and getAnte() < 25 then
-  setrunBG({ 0, 0, 0, 1 }, { 0, 0, 0, 0 }, 1)
-	musicPower(3)
-	setBPM(139)
-	return 999
 	end
   end
 }
@@ -414,9 +389,6 @@ SMODS.Sound {
   path = "music_nolimit3.ogg",
   select_music_track = function(self)
 	if isChallenge("dlcend") and getAnte() >= 70 and getAnte() < 100 then
-  setrunBG({ 1, 0.73, 0.54, 1 }, { 0.851, 0.557, 0.7, 1 }, 1)
-	musicPower(5)
-	setBPM(130)
 	return 9999
 	end
   end
@@ -429,9 +401,6 @@ SMODS.Sound {
   path = "music_nolimit2.ogg",
   select_music_track = function(self)
 	if isChallenge("dlcend") and getAnte() >= 50 and getAnte() < 70 then
-    setrunBG({ 0.529, 0.725, 0.922, 1 }, { 0.698, 0.792, 0.89, 1 }, 1)
-	musicPower(5)
-	setBPM(130)
 	return 9999
 	end
   end
@@ -444,9 +413,7 @@ SMODS.Sound {
   path = "music_nolimit1.ogg",
   select_music_track = function(self)
 	if isChallenge("dlcend") and getAnte() >= 40 and getAnte() < 50 then
-  setrunBG({ 0.545, 0.51, 0.78, 1 }, { 0.357, 0.325, 0.549, 1 }, 1)
-	musicPower(4)
-	setBPM(120)
+    
 	return 9999
 	end
   end
