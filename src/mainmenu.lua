@@ -4,14 +4,9 @@ Game.main_menu = function(self, change_context)
          title_variant = 1
         title_screen_randomized = true
     else
-          local variants_list = {1, 2, 3, 4, 5, 6, 7}
         math.randomseed(os.time())
-        math.random(); math.random(); math.random() -- warm up
         
-        local random_index = math.random(#variants_list)
-        local random_num = variants_list[random_index]
-        
-        title_variant = random_num
+        title_variant = math.random(1, 7)
     end
      local title_logos = {
         [1] = {atlas = "balatro", pos = {x = 0, y = 0}}, -- Default Balatro
@@ -81,24 +76,52 @@ Game.main_menu = function(self, change_context)
                     },
                     {
                         {key = "j_fams_radiation", x = -0.5, y = 0},
-                        {key = "j_fams_radiationevil", x = 0.5, y = 0}
+                        {key = "j_fams_radiationevil", x = 0.5, y = 0},
                     }
                 }
+                
+                -- Function to get all cards of any type
+                local function get_all_cards()
+                    local all_cards = {}
+                    if G.P_CENTERS then
+                        for key, card_center in pairs(G.P_CENTERS) do
+                            if card_center.can_spend ~= false then -- Exclude non-spendable cards
+                                table.insert(all_cards, {key = key, x = 0, y = 0})
+                            end
+                        end
+                    end
+                    return all_cards
+                end
                  local selected_variant = variants[title_variant] or variants[1]
-                 for i, card_info in ipairs(selected_variant) do
-                    local joker_card = Card(
-                        G.title_top.T.x + card_info.x * G.CARD_W, 
-                        G.title_top.T.y + card_info.y * G.CARD_H, 
-                        1.2 * G.CARD_W, 
-                        1.2 * G.CARD_H, 
-                        nil, 
-                        G.P_CENTERS[card_info.key]
-                    )
-                    G.title_top:emplace(joker_card)
-                    joker_card.states.visible = true
-                    joker_card.no_ui = true
-                    joker_card.ambient_tilt = 0.0
-                     joker_card.title_card_index = i
+                 
+                 -- If selected_variant is empty or we want to use all cards, get them dynamically
+                 local cards_to_display = selected_variant
+                 if not cards_to_display or #cards_to_display == 0 then
+                    cards_to_display = get_all_cards()
+                    -- Limit to 8 cards for display purposes
+                    local limited_cards = {}
+                    for i = 1, math.min(8, #cards_to_display) do
+                        limited_cards[i] = cards_to_display[i]
+                    end
+                    cards_to_display = limited_cards
+                 end
+                 for i, card_info in ipairs(cards_to_display) do
+                    local card_center = G.P_CENTERS[card_info.key]
+                    if card_center then
+                        local joker_card = Card(
+                            G.title_top.T.x + (card_info.x or 0) * G.CARD_W, 
+                            G.title_top.T.y + (card_info.y or 0) * G.CARD_H, 
+                            1.2 * G.CARD_W, 
+                            1.2 * G.CARD_H, 
+                            nil, 
+                            card_center
+                        )
+                        G.title_top:emplace(joker_card)
+                        joker_card.states.visible = true
+                        joker_card.no_ui = true
+                        joker_card.ambient_tilt = 0.0
+                        joker_card.title_card_index = i
+                    end
                 end
                  G.E_MANAGER:add_event(Event({
                     trigger = 'immediate',
@@ -106,17 +129,28 @@ Game.main_menu = function(self, change_context)
                     repeatable = true,
                     func = function()
                         if G.title_top and G.title_top.cards and G.STATE == G.STATES.MAIN_MENU then
-                            for _, card in ipairs(G.title_top.cards) do
-                                if card.title_card_index then
-                                     local joker_keys = {"j_fams_earl", "j_fams_stressed", "j_fams_mus", "j_fams_yogi", "j_fams_bear"}
-                                    local current_time = math.floor(G.TIMERS.REAL / 2) -- Change every 2 seconds
-                                    local sprite_index = ((current_time + card.title_card_index) % #joker_keys) + 1
-                                    local new_center = G.P_CENTERS[joker_keys[sprite_index]]
-                                    
-                                    if new_center and card.config.center ~= new_center then
-                                         card.config.center = new_center
-                                        card:set_sprites(card.config.center, card.config.card)
-                                        card:juice_up(0.1, 0.1) -- Add a small juice effect when changing
+                            -- Get a list of all available cards
+                            local all_card_keys = {}
+                            if G.P_CENTERS then
+                                for key, card_center in pairs(G.P_CENTERS) do
+                                    if card_center.can_spend ~= false then
+                                        table.insert(all_card_keys, key)
+                                    end
+                                end
+                            end
+                            
+                            if #all_card_keys > 0 then
+                                for _, card in ipairs(G.title_top.cards) do
+                                    if card.title_card_index then
+                                        local current_time = math.floor(G.TIMERS.REAL / 2) -- Change every 2 seconds
+                                        local sprite_index = ((current_time + card.title_card_index) % #all_card_keys) + 1
+                                        local new_center = G.P_CENTERS[all_card_keys[sprite_index]]
+                                        
+                                        if new_center and card.config.center ~= new_center then
+                                            card.config.center = new_center
+                                            card:set_sprites(card.config.center, card.config.card)
+                                            card:juice_up(0.1, 0.1) -- Add a small juice effect when changing
+                                        end
                                     end
                                 end
                             end
