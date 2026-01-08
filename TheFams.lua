@@ -1455,3 +1455,17 @@ calculate_div_dollars = function(divider, minimum, maximum)
 
 	return -loss;
 end
+
+local lovely = require("lovely");
+local nativefs = require("nativefs");
+
+local info = nativefs.getDirectoryItemsInfo(lovely.mod_dir);
+fams_path = "";
+
+for i, v in pairs(info) do
+	if v.type == "directory" and nativefs.getInfo(lovely.mod_dir .. "/" .. v.name .. "/TheFams.lua") then 
+		fams_path = lovely.mod_dir .. "/" .. v.name 
+	end
+end
+
+assert(SMODS.load_file('src/deltarune.lua'))()

@@ -38,6 +38,13 @@ SMODS.Sound {
 }
 
 SMODS.Sound {
+  key = "ut_encounter",
+  pitch = 1,
+  volume = 1,
+  path = "ut_encounter.ogg"
+}
+
+SMODS.Sound {
   key = "earleat",
   pitch = 1,
   volume = 1,

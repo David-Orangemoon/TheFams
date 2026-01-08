@@ -4,7 +4,7 @@
     "author": ["LeafiDev & More"],
     "description": "",
     "prefix": "fams",
-    "main_file": "ModdedVanilla.lua",
+    "main_file": "TheFams.lua",
     "badge_colour": "7a4a10",
     "dependencies": [
         "Steamodded (==1.0.0~)"

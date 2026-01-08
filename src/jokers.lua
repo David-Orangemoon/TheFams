@@ -1376,3 +1376,32 @@ SMODS.Joker {
 	end,
 }
 
+SMODS.Joker {
+	key = 'dr_soul', 
+	atlas = 'jokers',
+	pos = { x = 7, y = 3 },
+	soul_pos = { x = 8, y = 3 },
+	loc_txt = {
+		name = 'The Soul', 
+		text = {
+			"It may awaken during a {C:attention}boss blind{}..."
+		}
+	},
+	pools = {
+
+    },
+	config = { }, 
+	rarity = 2, 
+	cost = 0, 
+
+	calculate = function(self, card, context)
+		if context.setting_blind then
+			if (not (getcurrentBlind() == "Small Blind" or getcurrentBlind() == "Big Blind")) and (pseudorandom('dr_soul') > 0.6) then
+				G.GAME.dr_boss = true;
+				return { message = "Awoke", sound = "fams_ut_encounter" };
+			end
+		end
+
+		return 0;
+	end,
+}

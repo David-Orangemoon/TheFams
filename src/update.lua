@@ -14,6 +14,7 @@ G.fams_update = function(dt)
 
 	--Fix for talisman blowing up
 	if G.GAME then
+		G.GAME.dr_boss = G.GAME.dr_boss or false;
 		G.GAME.pikmin_rate = 0
 		G.GAME.credits_rate = 0
 		G.GAME.gimmicks_rate = 0

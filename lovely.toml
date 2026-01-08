@@ -29,3 +29,17 @@ end
 '''
 match_indent = true
 times = 1
+
+#Deltarune
+[[patches]]
+[patches.pattern]
+target = "main.lua"
+pattern = "G:draw()"
+position = "after"
+payload = '''
+if (G.fams_draw) then
+    G.fams_draw();
+end
+'''
+match_indent = true
+times = 1
