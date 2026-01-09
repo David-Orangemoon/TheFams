@@ -117,6 +117,17 @@ SMODS.Sound {
   end
 }
 
+SMODS.Sound {
+  key = "music_quiet",
+  pitch = 1,
+  path = "shush.ogg",
+  select_music_track = function(self)
+    if G.GAME.dr_boss then
+      return 999
+    end
+  end
+}
+
 
 SMODS.Sound {
   key = "Don",

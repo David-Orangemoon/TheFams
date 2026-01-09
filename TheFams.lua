@@ -257,15 +257,16 @@ isChallenge = function(key)
 end
 
 isAnte = function(num)
-	return G.GAME.round_resets.ante == num
+	return G.GAME.round_resets.blind_ante == num
 end
 
 getAnte = function()
-	return G.GAME.round_resets.ante
+	return G.GAME.round_resets.blind_ante
 end
 
 setAnte = function(index)
-	G.GAME.round_resets.ante = index
+	ease_ante(index - getAnte());
+	G.GAME.round_resets.blind_ante = G.GAME.round_resets.blind_ante or G.GAME.round_resets.ante
 end
 
 isBoss = function()
@@ -1464,8 +1465,24 @@ fams_path = "";
 
 for i, v in pairs(info) do
 	if v.type == "directory" and nativefs.getInfo(lovely.mod_dir .. "/" .. v.name .. "/TheFams.lua") then 
-		fams_path = lovely.mod_dir .. "/" .. v.name 
+		fams_path = v.name 
 	end
+end
+
+new_arbituary_image = function(path)
+	return love.graphics.newImage("mods/"..fams_path.."/assets/"..path)
+end
+
+new_arbituary_sound = function(path, isSource, shouldLoop)
+	if (isSource) then
+		local source = love.audio.newSource(love.sound.newSoundData("mods/"..fams_path.."/assets/"..path));
+		source:setLooping(shouldLoop or false);
+		return source;
+	else return love.sound.newSoundData("mods/"..fams_path.."/assets/"..path); end
+end
+
+new_arbituary_font = function(path, size, filtering)
+	return love.graphics.newFont("mods/"..fams_path.."/assets/"..path, size, filtering)
 end
 
 assert(SMODS.load_file('src/deltarune.lua'))()
