@@ -372,6 +372,10 @@ ForceLoss = function()
 	end
 end
 
+ForceWin = function()
+	
+end
+
 destroycard = function(card)
 	card:remove(true)
 end

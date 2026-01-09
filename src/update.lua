@@ -56,6 +56,16 @@ G.fams_update = function(dt)
 	return 99440024
 	end
 
+	if isChallenge("fj") then
+		print(G.STATE)
+		if hasJoker("Joker") and G.GAME.won == false then
+			win_game()
+		end
+		if getAnte() >= 7 then
+			G.GAME.round_resets.ante = 1
+		end
+	end
+
 	if isChallenge("Dogtrials") then
 		SetWinningAnte(12)
 		TIMER_LENGTH = 600
@@ -157,7 +167,6 @@ G.fams_update = function(dt)
 
 	if G.STATE == 11 then
 		if title_variant == 1 then
-			showFloatingImage("balatro", {x = 0, y = -2.5}, 450, 216, 2, {x = 0, y = 0}, "example1")
 			setMenuBG({ 0.85, 0.55, 0.25, 1 }, { 1, 0.9, 0.5, 1 }, { 1, 0.7, 0.3, 1 }, 0, math.abs(sine(0.6, 1)))
 		end
 		if title_variant == 2 then
@@ -210,7 +219,7 @@ G.fams_update = function(dt)
 		)
 	end
 
-	if G.STATE < 9 and G.STATE ~= 11 then
+	if G.STATE and G.STATE < 9 and G.STATE ~= 11 then
 		showFloatingText("BPM: " .. tostring(BPM), G.C.WHITE, 0.29, { x = 4.55, y = 3.1 }, "bpmcounter")
 		showFloatingText(
 			tostring(math.ceil(getBPMTick())) .. "/" .. getBPMMax(),
