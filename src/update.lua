@@ -81,6 +81,12 @@ G.fams_update = function(dt)
 		TIMER_LENGTH = 60
 		USE_TIMERS = true
 		TIMER_ADD_BONUS = true
+	elseif isChallenge("lap2") then
+		TIMER_LENGTH = 300
+		USE_TIMERS = true
+		TIMER_ADD_BONUS = false
+		SetWinningAnte(10)
+		G.ROOM.jiggle = 0.1
 	end
 
 	if G.STATE == G.STATES.WIN then

@@ -1280,6 +1280,37 @@ SMODS.Challenge {
 }
 
 SMODS.Challenge {
+  key = 'lap2',
+  loc_txt = {
+	name = "LAP 2!",
+  },
+  jokers = {
+	
+  },
+  deck = {
+	type = 'Challenge Deck'
+  },
+  button_colour = G.C.PURPLE,
+  rules = {
+	custom = {
+		{id = "lap2"},
+		{id = "lap22"}
+	},
+	modifiers = {
+		
+	}
+  },
+  restrictions = {
+	banned_cards = {},
+	banned_tags = {{id = "tag_fams_up"}, {id = "tag_fams_down"}},
+	banned_other = {}
+  },
+  consumeables = {},
+  vouchers = {},
+
+}
+
+SMODS.Challenge {
   key = 'mtn',
   loc_txt = {
 	name = "The Mountain",

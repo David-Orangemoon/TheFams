@@ -496,3 +496,17 @@ SMODS.Sound {
 	end
   end
 }
+
+SMODS.Sound {
+  key = "music_lap2",
+  pitch = 1,
+  volume = 1,
+  path = "music_lap2.ogg",
+  select_music_track = function(self)
+	if isChallenge("lap2") then
+	musicPower(5)
+	setBPM(90 * 2)
+  return 999
+	end
+  end
+}
