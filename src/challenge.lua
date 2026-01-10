@@ -1032,7 +1032,7 @@ SMODS.Challenge {
 	}
   },
   restrictions = {
-	banned_cards = {{id = "c_ectoplasm"}, {id = "v_antimatter"}},
+	banned_cards = {{id = "c_ectoplasm"}, {id = "v_antimatter"}, {id = "c_fams_m-dice"}, {id = "c_fams_m-dice-evil"}},
 	banned_tags = {{id = "tag_negative"}, {id = "tag_fams_GB"}, {id = "tag_fams_cts"}, {id = "tag_buffoon"}, {id = "tag_uncommon"}, {id = "tag_rare"}, {id = "tag_negative"}, {id = "tag_holo"}, {id = "tag_polychrome"}},
 	banned_other = {{id = "v_planet_merchant"}, {id = "v_planet_tycoon"}, {id = "bl_final_vessel", type = "blind"}, {id = "bl_final_heart", type = "blind"}, {id = "bl_final_bell", type = "blind"}, {id = "bl_final_leaf", type = "blind"}, {id = "bl_final_acorn", type = "blind"}}
   },
@@ -1212,6 +1212,35 @@ SMODS.Challenge {
 }
 
 SMODS.Challenge {
+  key = 'pastdue',
+  loc_txt = {
+	name = "Past due",
+  },
+  jokers = {
+	
+  },
+  deck = {
+	type = 'Challenge Deck'
+  },
+  rules = {
+	custom = {
+		{id = "money1"}
+	},
+	modifiers = {
+		{id = "dollars", value = 4},
+	}
+  },
+  restrictions = {
+	banned_cards = {},
+	banned_tags = {},
+	banned_other = {}
+  },
+  button_colour = G.C.MONEY,
+  consumeables = {},
+  vouchers = {}
+}
+
+SMODS.Challenge {
   key = 'fj',
   loc_txt = {
 	name = "Where's Jimbo",
@@ -1280,6 +1309,37 @@ SMODS.Challenge {
 }
 
 SMODS.Challenge {
+  key = 'lap2',
+  loc_txt = {
+	name = "LAP 2!",
+  },
+  jokers = {
+	
+  },
+  deck = {
+	type = 'Challenge Deck'
+  },
+  button_colour = G.C.PURPLE,
+  rules = {
+	custom = {
+		{id = "lap2"},
+		{id = "lap22"}
+	},
+	modifiers = {
+		
+	}
+  },
+  restrictions = {
+	banned_cards = {{id = "c_fams_m-dice"}, {id = "c_fams_m-dice-evil"}},
+	banned_tags = {{id = "tag_fams_up"}, {id = "tag_fams_down"}},
+	banned_other = {}
+  },
+  consumeables = {},
+  vouchers = {},
+
+}
+
+SMODS.Challenge {
   key = 'mtn',
   loc_txt = {
 	name = "The Mountain",
@@ -1335,7 +1395,7 @@ SMODS.Challenge {
   },
   restrictions = {
 	banned_cards = {},
-	banned_tags = {},
+	banned_tags = {{id = "c_fams_m-dice-evil"}},
 	banned_other = {}
   },
   consumeables = {},

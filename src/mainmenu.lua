@@ -6,7 +6,7 @@ Game.main_menu = function(self, change_context)
     else
         math.randomseed(os.time())
         
-        title_variant = math.random(11, 11)
+        title_variant = math.random(1, 11)
     end
      local title_logos = {
         [1] = {atlas = "balatro", pos = {x = 0, y = 0}}, 
@@ -37,7 +37,7 @@ Game.main_menu = function(self, change_context)
     end
      G.E_MANAGER:add_event(Event({
         trigger = 'before',
-        delay = 0,
+        delay = 2,
         func = function()
             if G.title_top and G.title_top.cards then
                  for i = #G.title_top.cards, 1, -1 do

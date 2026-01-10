@@ -106,6 +106,15 @@ return {
             ch_c_findjim = {
                 "{E:1,S:1.5}Find Jimbo!{}"
             },
+            ch_c_lap2 = {
+                "{E:1,S:1.5}Impressive 600 seconds from dog trials!{}"
+            },
+            ch_c_lap22 = {
+                "{C:red,E:2,}Now do it in 300.{}"
+            },
+            ch_c_money1 = {
+                "Make {C:attention}300${}"
+            },
         },
     },
 }
